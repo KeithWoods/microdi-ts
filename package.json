@@ -1,0 +1,15 @@
+{
+  "name": "microdi-ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --watchAll --config jest.config --no-cache"
+  },
+  "dependencies": {
+    "jest": "^18.1.0",
+    "microdi-js": "^1.0.1",
+    "reflect-metadata": "^0.1.9",
+    "typescript": "^2.1.5"
+  }
+}

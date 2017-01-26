@@ -1,0 +1,10 @@
+#  components 
+node_modules/
+.gitignore~
+dist
+.bin
+# other 
+**/.idea
+**/.bower-*/
+**/.tscache
+**/*-debug.log
