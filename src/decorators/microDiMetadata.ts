@@ -2,9 +2,12 @@ import 'reflect-metadata';
 
 interface Parmeter {
     type:any;
-    identifier?:string;
+    identifier?:string | Symbol;
 }
 
+/**
+ * Simple class to track DI metadata for an object
+ */
 export default class MicroDiMetadata {
 
     private static METADATA_SYMBOL = Symbol('microdi:metadata');
@@ -28,7 +31,11 @@ export default class MicroDiMetadata {
         this._parameters = metadata.map(type => { return { type:type, identifier:null }; });
     }
 
-    getDependencyIdentifiers() : Array<string> {
-        return this._parameters.map(p => p.identifier);
+    getDependencyIdentifiers() : Array<string | Symbol> {
+        return this._parameters.map(p => <string | Symbol>p.identifier);
+    }
+
+    verifyParameters(parametersToInject:Array<any>) {
+        // check parameter length matches
     }
 }
